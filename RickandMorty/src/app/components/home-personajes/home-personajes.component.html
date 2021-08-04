@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-4">
+      <img src="../../../assets/images/ImagenPrincipal.png" alt="" class="imagenPrincipal">
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center bordeBuscador">
+    <!--Boton Buscar todos-->
+    <div class="col-4">
+      <button type="button" class="btn btn-outline-warning" (click)="getAll(1,personaje_vacio)" >Buscar todos los personajes</button>
+    </div>
+    <!--Buscador-->
+    <div class="col-4" >
+      <form class="form-inline active-cyan-2 active-cyan">
+
+        <input class="form-control mr-1" type="text" placeholder="Buscar Personaje" id="buscadorPersonaje"
+        (keyup.enter)="getAll(page_buscar, buscarTexto.value)" #buscarTexto>
+
+        <button class="btn btn-outline-primary " type="button" (click)="getAll(page_buscar, buscarTexto.value)">Buscar</button>
+      </form>
+    </div>
+
+    <div class="container-fluid">
+      <table class="table table-dark table-bordered table-hover table-resposive mt-3 tabla-usuario"
+            style="text-align: center;"
+            >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <!-- <th scope="col">Categoria</th> -->
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especie</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Genero</th>
+            <th scope="" class="tamañocapitulos">Capitulos</th>
+
+          </tr>
+        </thead>
+        <tbody  *ngFor="let item of resultadoPeticion | paginate: {itemsPerPage: perPage, currentPage: page, totalItems: total}">
+          <tr style="height: 20px !important;">
+            <th scope="row">{{item.id}}</th>
+            <!-- <td>{{item.categoria}}</td> -->
+            <td><img [src]="item.image" alt="img" class="imgpersonaje"></td>
+            <td >{{item.name}}</td>
+            <td>{{item.species}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.gender}}</td>
+            <td >
+              <ul class="navbar-nav" *ngFor="let x of item.episode">
+                <li>
+                 <a [routerLink]="['/capitulo',x]"> {{x}}</a>
+                </li>
+              </ul>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls
+        [previousLabel]="'Anterior'"
+        [nextLabel]="'Siguiente'"
+        (pageChange)="pageChanged($event)">
+  </pagination-controls>
+
+  </div>
+  </div>
+</div>

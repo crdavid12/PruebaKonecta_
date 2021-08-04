@@ -1,0 +1,80 @@
+/* ------------------------ Navbar ---------------------------- */
+
+body{
+  background-color: black;
+}
+
+.textoNavbar{
+  color: #4C9C46;
+  font-size: 2em;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+
+.nav-linkMod {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav-linkMod:hover, .nav-link:focus {
+  text-decoration: none;
+}
+
+.nav-linkMod.disabled {
+  color: #6c757d;
+}
+
+.margenNav{
+  margin-bottom: 20px;
+}
+
+/* ---------------------- Fin Navbar -------------------------- */
+
+/*---------------------------------------------------------*/
+
+/* -------------------------- Home ----------------------- */
+
+
+/*Search*/
+.active-cyan-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+
+.active-cyan input[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan .fa, .active-cyan-2 .fa {
+  color: #4dd0e1;
+}
+
+.imagenPrincipal{
+  width: 100%;
+}
+
+.bordeBuscador{
+  border-radius: 2px solid #12B0C9;
+}
+
+/*----------------------Imagen Personaje---------------------*/
+
+.imgpersonaje{
+
+  width: 150px;
+}
+
+
+.headt td {
+  height: 10px;
+  background-color: #433;
+}
+
+
+/*----------------------Consulta Capitulo---------------------*/
+
+.letraCapitulo{
+  font-size: 1.5em;
+  color: #FFC107;
+}
